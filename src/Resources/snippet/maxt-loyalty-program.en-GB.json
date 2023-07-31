@@ -1,0 +1,19 @@
+{
+    "maxt-loyalty-program": {
+        "storefront": {
+            "account": {
+                "sidebar": {
+                    "linkTitle": "Loyalty Points",
+                    "linkText": "Loyalty Points"
+                }
+            },
+            "loyalty": {
+                "welcomeTitle": "Your Loyalty Points",
+                "welcomeText": "Check your loyalty points.",
+                "orderPointsTotal": "Order Points Total",
+                "reviewPointsTotal": "Review Points Total",
+                "pointsTotal": "Points Total"
+            }
+        }
+    }
+}

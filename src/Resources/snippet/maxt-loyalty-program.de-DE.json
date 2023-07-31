@@ -1,0 +1,19 @@
+{
+    "maxt-loyalty-program": {
+        "storefront": {
+            "account": {
+                "sidebar": {
+                    "linkTitle": "Treuepunkte",
+                    "linkText": "Treuepunkte"
+                }
+            },
+            "loyalty": {
+                "welcomeTitle": "Ihre Treuepunkte",
+                "welcomeText": "Überprüfen Sie Ihre Treuepunkte.",
+                "orderPointsTotal": "Bestellpunkte insgesamt",
+                "reviewPointsTotal": "Bewertungspunkte insgesamt",
+                "pointsTotal": "Gesamtanzahl der Punkte"
+            }
+        }
+    }
+}

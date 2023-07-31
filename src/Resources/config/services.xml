@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <!-- Entity extensions: -->
+        <service id="MaxT\MaxTLoyaltyProgram\Core\Checkout\Customer\CustomerExtension">
+            <tag name="shopware.entity.extension"/>
+        </service>
+
+        <!-- Entity definitions: -->
+        <service id="MaxT\MaxTLoyaltyProgram\Core\Checkout\Order\Aggregate\OrderPoint\OrderPointDefinition">
+            <tag name="shopware.entity.definition" entity="maxt_loyalty_order_point"/>
+        </service>
+
+        <service
+            id="MaxT\MaxTLoyaltyProgram\Core\Content\Product\Aggregate\ProductReviewPoint\ProductReviewPointDefinition">
+            <tag name="shopware.entity.definition" entity="maxt_loyalty_product_review_point"/>
+        </service>
+
+        <!-- Services: -->
+        <service id="MaxT\MaxTLoyaltyProgram\Service\OrderLoyaltyProgramService">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="maxt_loyalty_order_point.repository"/>
+        </service>
+
+        <service id="MaxT\MaxTLoyaltyProgram\Service\ReviewLoyaltyProgramService">
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="maxt_loyalty_product_review_point.repository"/>
+        </service>
+
+        <!-- Subscribers: -->
+        <service id="MaxT\MaxTLoyaltyProgram\Subscriber\OrderSubscriber">
+            <tag name="kernel.event_subscriber"/>
+            <argument type="service" id="MaxT\MaxTLoyaltyProgram\Service\OrderLoyaltyProgramService"/>
+        </service>
+
+        <service id="MaxT\MaxTLoyaltyProgram\Subscriber\ProductReviewSubscriber">
+            <tag name="kernel.event_subscriber"/>
+            <argument type="service" id="MaxT\MaxTLoyaltyProgram\Service\ReviewLoyaltyProgramService"/>
+            <argument type="service" id="product_review.repository"/>
+        </service>
+
+        <!-- Page loaders: -->
+        <service id="MaxT\MaxTLoyaltyProgram\Storefront\Page\Account\LoyaltyPoint\AccountLoyaltyPointPageLoader"
+                 public="true">
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader"/>
+            <argument type="service" id="maxt_loyalty_order_point.repository"/>
+            <argument type="service" id="maxt_loyalty_product_review_point.repository"/>
+        </service>
+
+        <!-- Controllers: -->
+        <service id="MaxT\MaxTLoyaltyProgram\Storefront\Controller\AccountLoyaltyPointController" public="true">
+            <argument type="service"
+                      id="MaxT\MaxTLoyaltyProgram\Storefront\Page\Account\LoyaltyPoint\AccountLoyaltyPointPageLoader"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <service id="MaxT\MaxTLoyaltyProgram\Administration\Controller\ApiController" public="true">
+            <argument type="service"
+                      id="MaxT\MaxTLoyaltyProgram\Storefront\Page\Account\LoyaltyPoint\AccountLoyaltyPointPageLoader"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+    </services>
+</container>

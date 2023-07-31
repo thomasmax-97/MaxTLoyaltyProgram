@@ -1,0 +1,12 @@
+{
+    "maxt-loyalty-program": {
+        "sw_customer_detail_base_info": {
+            "cardTitle": "Treuepunkte",
+            "orderPoints": "Bestellpunkte",
+            "reviewPoints": "Bewertungspunkte",
+            "pointsTotal": "Gesamtanzahl der Punkte",
+            "loading": "Laden...",
+            "noData": "Keine Daten verfügbar"
+        }
+    }
+}

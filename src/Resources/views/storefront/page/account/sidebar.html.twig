@@ -1,0 +1,15 @@
+{% sw_extends '@Storefront/storefront/page/account/sidebar.html.twig' %}
+
+ {% block page_account_sidebar_menu %}
+     {{ parent() }}
+
+     {% block maxt_loayalty_page_account_sidebar_link_points %}
+         <a href="{{ path('frontend.example.example') }}"
+            title="{{ 'maxt-loyalty-program.storefront.account.sidebar.linkTitle'|trans }}"
+            class="list-group-item list-group-item-action account-aside-item{% if activeRoute is same as('frontend.account.order.page') %} is-active{% endif %}">
+             {{ 'maxt-loyalty-program.storefront.account.sidebar.linkText'|trans }}
+         </a>
+     {% endblock %}
+ {% endblock %}
+
+

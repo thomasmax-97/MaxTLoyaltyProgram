@@ -1,0 +1,29 @@
+{% sw_extends '@Storefront/storefront/page/account/_page.html.twig' %}
+
+{% block page_account_main_content %}
+    {{ parent() }}
+
+    {% block maxt_loayalty_page_account_loyalty_main_content %}
+        {% block maxt_loayalty_page_account_loyalty_welcome %}
+            <div class="account-overview">
+                <h1>{{ 'maxt-loyalty-program.storefront.loyalty.welcomeTitle'|trans }}</h1>
+                <p>{{ 'maxt-loyalty-program.storefront.loyalty.welcomeText'|trans }}</p>
+                <hr/>
+            </div>
+        {% endblock %}
+
+        {% block maxt_loayalty_page_account_loyalty_main %}
+            <div class="loyalty-points">
+                <p><strong>{{ 'maxt-loyalty-program.storefront.loyalty.orderPointsTotal'|trans }}
+                        :</strong> {{ page.orderPointsTotal }}</p>
+                <p><strong>{{ 'maxt-loyalty-program.storefront.loyalty.reviewPointsTotal'|trans }}
+                        : </strong> {{ page.reviewPointsTotal }}</p>
+                <p><strong>{{ 'maxt-loyalty-program.storefront.loyalty.pointsTotal'|trans }}
+                        :</strong> {{ page.pointsTotal }}</p>
+            </div>
+        {% endblock %}
+
+    {% endblock %}
+{% endblock %}
+
+

@@ -1,0 +1,12 @@
+{
+    "maxt-loyalty-program": {
+        "sw_customer_detail_base_info": {
+            "cardTitle": "Loyalty points",
+            "orderPoints": "Order Points",
+            "reviewPoints": "Review Points",
+            "pointsTotal": "Points total",
+            "loading": "Loading...",
+            "noData": "No data available"
+        }
+    }
+}

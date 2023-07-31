@@ -1,0 +1,35 @@
+{
+    "name": "maxt/loyalty-program",
+    "description": "Loyalty Plugin by Maximilian Thomas",
+    "type": "shopware-platform-plugin",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Maximilian Thomas",
+            "homepage": "https://maximilian-thomas.com/"
+        }
+    ],
+    "require": {
+        "shopware/core": "^6.4",
+        "shopware/storefront": "^6.4",
+        "shopware/administration": "^6.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MaxT\\MaxTLoyaltyProgram\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "MaxT\\MaxTLoyaltyProgram\\MaxTLoyaltyProgram",
+        "copyright": "Maximilian Thomas",
+        "label": {
+            "de-DE": "MaxTLoyaltyProgram",
+            "en-GB": "MaxTLoyaltyProgram"
+        },
+        "description": {
+            "de-DE": "Treuepunkte Plugin",
+            "en-GB": "Loyalty Plugin"
+        }
+    }
+}

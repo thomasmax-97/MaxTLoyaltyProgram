@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/trunk/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Basic Configuration</title>
+        <title lang="de-DE">Grundeinstellungen</title>
+
+        <!-- Configuration field for points per euro spent -->
+        <input-field type="int">
+            <name>pointsPerEuroSpent</name>
+            <defaultValue>1</defaultValue>
+            <label>Points per Euro spent</label>
+            <label lang="de-DE">Punkte pro ausgegebenem Euro</label>
+            <helpText>Set the number of points earned for every Euro spent by customers</helpText>
+            <helpText lang="de-DE">Lege die Anzahl der Punkte fest, die Kunden pro ausgegebenem Euro erhalten</helpText>
+        </input-field>
+
+        <!-- Configuration field for points earned per product comment -->
+        <input-field type="int">
+            <name>pointsPerProductComment</name>
+            <defaultValue>5</defaultValue>
+            <label>Points per product comment</label>
+            <label lang="de-DE">Punkte pro Produktkommentar</label>
+            <helpText>Set the number of points earned for each product comment made by customers</helpText>
+            <helpText lang="de-DE">Lege die Anzahl der Punkte fest, die Kunden für jeden Produktkommentar erhalten
+            </helpText>
+        </input-field>
+
+
+    </card>
+</config>

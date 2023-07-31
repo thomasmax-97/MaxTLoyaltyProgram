@@ -1,0 +1,22 @@
+{% block sw_customer_detail_base_info_card %}
+    {% parent() %}
+
+    {% block maxt_loyalty_sw_customer_detail_base_info_point_content %}
+        <!-- eslint-disable-next-line sw-deprecation-rules/no-twigjs-blocks -->
+        <div v-if="loyaltyPoints">
+            <sw-card :title="$t('maxt-loyalty-program.sw_customer_detail_base_info.cardTitle')">
+                <sw-description-list>
+                    <dt>{{ $t('maxt-loyalty-program.sw_customer_detail_base_info.orderPoints') }}</dt>
+                    <dd>{{ loyaltyPoints.orderPointsTotal }}</dd>
+                    <dt>{{ $t('maxt-loyalty-program.sw_customer_detail_base_info.reviewPoints') }}</dt>
+                    <dd>{{ loyaltyPoints.reviewPointsTotal }}</dd>
+                    <dt>{{ $t('maxt-loyalty-program.sw_customer_detail_base_info.pointsTotal') }}</dt>
+                    <dd>{{ loyaltyPoints.pointsTotal }}</dd>
+                    <dt/>
+                    <dd/>
+                </sw-description-list>
+            </sw-card>
+        </div>
+        <div v-else>{{ $t('maxt-loyalty-program.sw_customer_detail_base_info.loading') }}</div>
+    {% endblock %}
+{% endblock %}
