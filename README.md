@@ -12,12 +12,10 @@ The main features of the plugin are as follows:
     
     - Customers can easily view their total accumulated points in their account dashboard. This allows them to keep track of their loyalty points and incentivizes further engagement with the platform.
     
-![](../../../../../Downloads/Screenshot 2023-07-31 at 13.57.17.png)
 1.  **Administrator Access**:
     
     - Administrators have the ability to view the bonus points of all customers in the Shopware admin area. The exact location within the admin area is designed to be user-friendly and intuitive.
-
-![](../../../../../Desktop/screens/Screenshot 2023-07-31 at 14.04.46.png)
+      
 2.  **Extended Shopware API**:
     
     -   The plugin extends the Shopware API to include the bonus points of a customer. This ensures seamless integration with other plugins or custom solutions that may require access to this data.
